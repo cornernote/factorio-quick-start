@@ -11,10 +11,18 @@ script.on_event(defines.events.on_player_joined_game, function(event)
         if (player.cutscene_character) then
             player = player.cutscene_character
         end
+
+        game.print(player.name .. " explores the crashed spaceship and discovers hidden treasures!")
+
+        game.print(player.name .. " finds a mysterious artifact that extends their ghost time to live!")
         player.force.ghost_time_to_live = 60 * 60 * 60 * 24 * 7
+        game.print(player.name .. " uncovers ancient technology that enhances the speed of their worker robots!")
         player.force.worker_robots_speed_modifier = 3.0
+        game.print(player.name .. " stumbles upon a forgotten recipe book, granting them the knowledge to craft with lightning speed!")
         player.force.manual_crafting_speed_modifier = 3.0
+        game.print(player.name .. " unearths a mythical pickaxe, imbued with incredible power, granting them unmatched mining speed!")
         player.force.manual_mining_speed_modifier = 3.0
+        game.print(player.name .. " discovers an ancient laboratory device, empowering them to conduct research at an astonishing pace!")
         player.force.laboratory_speed_modifier = 3.0
 
         -- Dont run agian
@@ -24,7 +32,7 @@ script.on_event(defines.events.on_player_joined_game, function(event)
     local playerName = game.players[event.player_index].name
     local reference = "known_player_" .. playerName
     if global[reference] == nil then
-        game.print(playerName .. " opened a emergency crash landing kit, wow this kit has really useful stuff!")
+        game.print(playerName .. " discovers an emergency crash landing kit, filled with invaluable supplies and equipment!")
         global[reference] = true
 
         -- Gun and Ammo
@@ -110,7 +118,7 @@ end)
 script.on_event(defines.events.on_player_respawned, function(event)
     player = game.players[event.player_index]
 
-    game.print("The respawn clone of " .. player.name .. " got 3d printed with some ussefull gear already on them.")
+    game.print(player.name .. " rises anew, armed with new gear to reclaim what was lost!")
 
     -- Something to drive with
     player.insert({ name = "tank", count = 1 })
