@@ -31,22 +31,10 @@ script.on_event(defines.events.on_player_joined_game, function(event)
         player.get_inventory(defines.inventory.character_guns).clear()
         player.get_inventory(defines.inventory.character_ammo).clear()
         player.insert({ name = "submachine-gun", count = 1 })
-        player.insert({ name = "piercing-rounds-magazine", count = 400 })
-
-        -- Spidertron
-        player.insert({ name = "spidertron", count = 1 })
-        player.insert({ name = "spidertron-remote", count = 1 })
-        player.insert({ name = "solar-panel-equipment", count = 16 })
-        player.insert({ name = "exoskeleton-equipment", count = 3 })
-        player.insert({ name = "personal-laser-defense-equipment", count = 2 })
-        player.insert({ name = "energy-shield-equipment", count = 2 })
-        player.insert({ name = "battery-equipment", count = 2 })
-        -- cant access spidertron grid while in inventory :(
-        --local spidertron = player.get_main_inventory().find_item_stack("spidertron").grid
-        --spidertron.grid.put({ name = "solar-panel-equipment" })
+        player.insert({ name = "piercing-rounds-magazine", count = 200 })
 
         -- Modular Armor and Robot Kit
-        player.insert({ name = "construction-robot", count = 10 })
+        player.insert({ name = "construction-robot", count = 20 })
         player.insert({ name = "modular-armor", count = 1 })
         local armor = player.get_inventory(defines.inventory.character_armor)[1]
         for _ = 1, 2 do
@@ -135,5 +123,5 @@ script.on_event(defines.events.on_player_respawned, function(event)
     player.get_inventory(defines.inventory.character_guns).clear()
     player.get_inventory(defines.inventory.character_ammo).clear()
     player.insert({ name = "submachine-gun", count = 1 })
-    player.insert({ name = "piercing-rounds-magazine", count = 200 })
+    player.insert({ name = "piercing-rounds-magazine", count = 400 })
 end)
