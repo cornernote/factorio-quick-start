@@ -2,24 +2,18 @@
 
 This mod provides players with an emergency crash landing kit containing useful items and equipment when they join the game for the first time or respawn after death.
 
-## Initialization
+## Game Speedup
 
-The mod initializes by assigning the `global.firstplayer` variable as `true` during the `on_init` event. This variable helps identify the first player who joins the game.
-
-## First Player Join Event
-
-When the first player joins the game (`on_player_joined_game` event), the following actions are performed:
+When the first player joins the game, the following actions are performed:
 
 - If the player is in a cutscene, their character is replaced with the cutscene character.
 - The player's force is modified with increased properties:
     - `ghost_time_to_live` is set to 7 days (60 seconds * 60 minutes * 24 hours * 7 days).
     - `worker_robots_speed_modifier`, `manual_crafting_speed_modifier`, `manual_mining_speed_modifier`, and `laboratory_speed_modifier` are all set to 3.0.
 
-Once these modifications are applied, the `global.firstplayer` variable is set to `false` to prevent running the actions again.
+## Join Kit Contents
 
-A message is then displayed in the game notifying other players that the joining player has opened an emergency crash landing kit, which contains useful items.
-
-The following items are inserted into the player's inventory:
+The following items are inserted into the player's inventory after joining:
 
 - Gun and Ammo:
     - 1x Submachine Gun
@@ -91,13 +85,9 @@ The following items are inserted into the player's inventory:
     - 4x Chemical Plant
     - 4x Pumpjack
 
-## Player Respawn Event
+## Respawn Kit Contents
 
-When a player respawns (`on_player_respawned` event), the following actions are performed:
-
-- A message is displayed in the game notifying other players that the respawned clone of the player has been printed with useful gear.
-
-The following items are inserted into the player's inventory:
+When a player respawns, the following items are inserted into the player's inventory:
 
 - Something to drive with:
     - 1x Tank
